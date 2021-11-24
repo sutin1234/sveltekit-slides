@@ -1,5 +1,5 @@
 <script>
-	import logo from './images/alpine_logo.svg';
+	import logo from '$assets/images/alpine_logo.svg';
 </script>
 
 <div class="p-4 text-center my-4">

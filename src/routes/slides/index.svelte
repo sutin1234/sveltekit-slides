@@ -6,8 +6,8 @@
 	import SlideFour from '$lib/slides/SlideFour.svelte';
 	import SlideFive from '$lib/slides/SlideFive.svelte';
 	import SlideSix from '$lib/slides/SlideSix.svelte';
-	import arrow_next from '$lib/slides/images/arrow-next.svg';
-	import arrow_prev from '$lib/slides/images/arrow-prev.svg';
+	import arrow_next from '$assets/images/arrow-next.svg';
+	import arrow_prev from '$assets/images/arrow-prev.svg';
 	let currentComponent = 0;
 	let slides = [SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix];
 	const prev = () => currentComponent--;

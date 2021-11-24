@@ -2,12 +2,19 @@
 	export const prerender = true;
 </script>
 
-<script lang="ts">
+<script>
+	import Highlight from 'svelte-highlight';
+	import typescript from 'svelte-highlight/src/languages/typescript';
+	import github from 'svelte-highlight/src/styles/github';
+	import 'svelte-highlight/src/styles/atom-one-dark.css';
+
+	const code = `
+	Echo "Thinny Developer By SvelteKit"
+	`;
 </script>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
-<div>
-	<h1 class="uppercase">introduction</h1>
-</div>
+<!-- <svelte:head>
+	{@html github}
+</svelte:head> -->
+
+<Highlight language={typescript} {code} />

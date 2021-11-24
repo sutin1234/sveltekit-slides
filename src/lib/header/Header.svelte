@@ -3,7 +3,7 @@
 	import logo from './svelte-logo.svg';
 </script>
 
-<header>
+<header class="flex shadow-lg h-16 justify-center items-center">
 	<div class="corner">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" /> Sveltekit slides
