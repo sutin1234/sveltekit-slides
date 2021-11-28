@@ -16,7 +16,7 @@ const config = {
 		vite: {
 			plugins: [WindiCSS()],
 			optimizeDeps: {
-				include: ["highlight.js/lib/core"],
+				include: ["highlight.js/lib/core", "prism-svelte"],
 			},
 			resolve: {
 				alias: {

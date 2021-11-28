@@ -12,7 +12,6 @@
 </main>
 
 <style global lang="postcss">
-	@import url(https://fonts.googleapis.com/css??family=Nanum+Pen+Script&display=swap);
 	body,
 	html {
 		/* font-family: 'Nanum Pen Script', cursive; */
