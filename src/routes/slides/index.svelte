@@ -8,12 +8,16 @@
 	import SlideSix from '$lib/slides/SlideSix.svelte';
 	import arrow_next from '$assets/images/arrow-next.svg';
 	import arrow_prev from '$assets/images/arrow-prev.svg';
+	import { seo } from '$lib/store/seo';
+
 	let currentComponent = 0;
 	let slides = [SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix];
 	const prev = () => currentComponent--;
 	const next = () => currentComponent++;
 	$: disabledPrev = currentComponent <= 0;
 	$: disabledNext = currentComponent >= slides.length - 1;
+
+	$seo.title = 'Thinny.dev | Slides';
 </script>
 
 <div>
