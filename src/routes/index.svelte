@@ -10,7 +10,12 @@
 	import 'svelte-highlight/src/styles/atom-one-dark.css';
 
 	// update SEO
-	$seo.title = 'Thinny.dev | Home ';
+	$seo = {
+		...$seo,
+		title: 'Thinny.dev | Home ',
+		url: 'www.thinny.dev/',
+		image: 'https://npgblog.dev/static/5b3e1215fa148d9f5a3a01d4f1d51c3d/ee604/featureImage.png'
+	};
 
 	const code = `
 	Echo "Thinny Developer By SvelteKit"
