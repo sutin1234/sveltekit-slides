@@ -1,17 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './logo.png';
 	import Seo from '$lib/components/Seo.svelte';
 	import 'virtual:windi.css';
 </script>
 
 <Seo />
 
-<header class="flex shadow-lg h-16 justify-center items-center">
-	<div class="corner px-2">
+<header class="flex shadow-lg h-18 justify-center items-center">
+	<div class="corner px-2 mx-2">
 		<a href="/">
-			<img src={logo} alt="SvelteKit" />
-
+			<img src={logo} alt="SvelteKit" class="mx-2" />
 			<span class="<sm:hidden">Thinny.dev</span>
 			<span class="@sm:hidden @lg:hidden @xl:hidden 2xl:hidden">slides</span>
 		</a>
@@ -21,13 +20,17 @@
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
+
 		<ul>
 			<li class:active={$page.url.pathname === '/'}>
 				<a sveltekit:prefetch href="/">Home</a>
 			</li>
+			<!-- 			
 			<li class:active={$page.url.pathname === '/slides'}>
 				<a sveltekit:prefetch href="/slides">Slides</a>
 			</li>
+			 -->
+
 			<li class:active={$page.url.pathname === '/blogs'}>
 				<a sveltekit:prefetch href="/blogs">Blog</a>
 			</li>
