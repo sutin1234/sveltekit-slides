@@ -27,4 +27,6 @@
 	{@html github}
 </svelte:head>
 
-<Highlight {code} language={typescript} />
+<div class="min-h-screen flex justify-center items-center">
+	<Highlight {code} language={typescript} />
+</div>

@@ -9,4 +9,10 @@
 	};
 </script>
 
-<Card title="first card" coverImage="cover image" />
+<div class="min-h-screen flex justify-center items-center">
+	<!-- <Card
+		title="Noteworthy technology acquisitions 2021"
+		description="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order"
+	/> -->
+	<h2>Comimg soon...</h2>
+</div>

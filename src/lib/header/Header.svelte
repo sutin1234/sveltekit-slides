@@ -11,8 +11,8 @@
 	<div class="corner px-2 mx-2">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" class="mx-2" />
-			<span class="<sm:hidden">Thinny.dev</span>
-			<span class="@sm:hidden @lg:hidden @xl:hidden 2xl:hidden">slides</span>
+			<span class="text-xl font-bold">Thinny.dev</span>
+			<!-- <span class="@sm:hidden @lg:hidden @xl:hidden 2xl:hidden">slides</span> -->
 		</a>
 	</div>
 
@@ -33,6 +33,9 @@
 
 			<li class:active={$page.url.pathname === '/blogs'}>
 				<a sveltekit:prefetch href="/blogs">Blog</a>
+			</li>
+			<li class:active={$page.url.pathname === '/about'}>
+				<a sveltekit:prefetch href="/about">About</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">

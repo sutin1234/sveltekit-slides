@@ -7,7 +7,7 @@
 
 <Header />
 
-<main class="rounded-lg flex flex-col max-h-full justify-center items-center m-20">
+<main class="rounded-lg flex flex-col max-h-full justify-center items-center">
 	<slot />
 </main>
 
