@@ -13,7 +13,7 @@
 
 	$seo = {
 		...$seo,
-		title: 'Thinny.dev | โปรไฟล์เจ้าของเว็บไซต์ ',
+		title: 'Thinny.dev | Aboute โปรไฟล์เจ้าของเว็บไซต์ ',
 		url: '/about',
 		keywords: 'thinny.dev, Profile, Sutin, thinny, สุทิน อินจิตต์',
 		description: 'โปรไฟล์เจ้าของเว็บไซต์, Sutin, thinny',
