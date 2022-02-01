@@ -1,10 +1,9 @@
-<script context="module">
+<!-- <script context="module">
 	import { browser, dev } from '$app/env';
 	export const hydrate = dev;
 	export const router = browser;
 	export const prerender = true;
-</script>
-
+</script> -->
 <script>
 	import { seo } from '$lib/store/seo';
 	import Card from '$lib/components/Card.svelte';

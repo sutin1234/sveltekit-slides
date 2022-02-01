@@ -1,10 +1,9 @@
-<script context="module">
+<!-- <script context="module">
 	import { browser, dev } from '$app/env';
 	export const hydrate = dev;
 	export const router = browser;
 	export const prerender = true;
-</script>
-
+</script> -->
 <script>
 	import { seo } from '$lib/store/seo';
 
@@ -13,7 +12,7 @@
 
 	$seo = {
 		...$seo,
-		title: 'Thinny.dev | Aboute โปรไฟล์เจ้าของเว็บไซต์ ',
+		title: 'Thinny.dev | About โปรไฟล์เจ้าของเว็บไซต์ ',
 		url: '/about',
 		keywords: 'thinny.dev, Profile, Sutin, thinny, สุทิน อินจิตต์',
 		description: 'โปรไฟล์เจ้าของเว็บไซต์, Sutin, thinny',
