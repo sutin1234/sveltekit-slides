@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import 'dayjs/locale/th'
+import 'dayjs/locale/th.js'
 dayjs.locale('th')
 
 export const dateThai = (datetime: string, format = 'MMMM D, YYYY'): string => {
