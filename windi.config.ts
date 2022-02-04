@@ -1,9 +1,12 @@
 import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
-    heme: {
+    theme: {
         screens: {
             small: '320px'
+        },
+        height: {
+            'h-100': '30rem',
         },
     },
     // attributify: true,
