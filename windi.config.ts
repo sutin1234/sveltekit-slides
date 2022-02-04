@@ -12,7 +12,8 @@ export default defineConfig({
     //     exclude: ['node_modules', '.git'],
     // },
     alias: {
-        active: "bg-blue-400 rounded-lg text-white font-weight"
+        inactive: "text-red-500 text-bold p-2",
+        activated: 'text-blue-500 text-bold p-2'
     },
     shortcuts: {
         active: "bg-blue-400 rounded-lg text-white font-weight"

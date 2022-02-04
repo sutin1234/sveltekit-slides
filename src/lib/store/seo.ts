@@ -1,6 +1,15 @@
 import { writable } from "svelte/store";
-
-export const seo = writable({
+interface SEO {
+    favicon?: string;
+    title: string;
+    description?: string;
+    type?: string;
+    url?: string;
+    image?: string;
+    site_name?: string;
+    keywords?: string;
+}
+const initialize: SEO = {
     favicon: '/favicon.png',
     title: "Thinny.dev | เว็บไซต์เพื่อการเรียนรู้การเขียนโปรแกรม",
     description: "Thinny.dev | เว็บไซต์เพื่อการเรียนรู้การเขียนโปรแกรม",
@@ -9,4 +18,11 @@ export const seo = writable({
     image: '',
     site_name: 'Sutin Injitt',
     keywords: 'บทความเกี่ยวกับโปรแรก Angular, Vue, SvelteKit, Rust, React, NextJS, etc...'
-})
+}
+
+export const seo = writable(initialize)
+export const update = (data: SEO): void => {
+    seo.update(content => {
+        return { ...content, ...data }
+    })
+}
