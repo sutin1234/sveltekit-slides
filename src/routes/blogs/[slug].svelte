@@ -1,22 +1,37 @@
 <script context="module">
-	export const load = async ({ params }) => {
+	import { seo, update } from '$lib/store/seo';
+	import supabase from '$lib/db';
+
+	export const load = async ({ url, params }) => {
 		const { slug } = params;
+		const title = slug.replace(/-/g, ' ');
+		let { data: blog, error } = await supabase
+			.from('blogs')
+			.select('*')
+			.eq('title', title)
+			.single();
+
+		update({
+			title,
+			description: blog.description,
+			image: blog.cover_image,
+			keywords: blog.title,
+			url: `/blogs/${slug}`
+		});
 		return {
 			props: {
-				slug
+				blog
 			}
 		};
 	};
 </script>
 
 <script>
-	import { seo, update } from '$lib/store/seo';
-	export let slug;
-	$: slug_title = slug.replace(/-/g, ' ');
-	$seo.title = slug_title;
+	export let blog;
 </script>
 
 <!-- <svelte:head><title>{'Blog: ' + slug_title}</title></svelte:head> -->
-<div class="flex justify-center items-center bg-white m-4">
-	{$seo.title}
+<div class="bg-white m-4">
+	<h1 class="text-3xl">{$seo.title}</h1>
+	<p class="p-2">{JSON.stringify(blog)}</p>
 </div>
