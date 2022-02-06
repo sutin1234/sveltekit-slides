@@ -25,7 +25,7 @@
 	export let blogs;
 </script>
 
-<div class="flex justify-center items-center">
+<div class="flex flex-wrap justify-center items-center">
 	{#each blogs as { title, description, cover_image, published, author }}
 		<Card {title} {description} {cover_image} {published} {author} />
 	{/each}
