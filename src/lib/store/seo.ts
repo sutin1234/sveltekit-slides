@@ -21,7 +21,7 @@ const initialize: SEO = {
 }
 
 export const seo = writable(initialize)
-export const update = (data: SEO): void => {
+export const updateSeoTag = (data: SEO): void => {
     seo.update(content => {
         return { ...content, ...data }
     })

@@ -14,7 +14,7 @@
 		...$seo,
 		title: 'Thinny.dev | About โปรไฟล์เจ้าของเว็บไซต์ ',
 		url: '/about',
-		keywords: 'thinny.dev, Profile, Sutin, thinny, สุทิน อินจิตต์',
+		keywords: 'thinny.dev, About Profile, Sutin, thinny, สุทิน อินจิตต์',
 		description: 'โปรไฟล์เจ้าของเว็บไซต์, Sutin, thinny',
 		image: profile
 	};
