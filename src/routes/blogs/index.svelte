@@ -1,12 +1,12 @@
 <script context="module">
-	// import { browser, dev } from '$app/env';
-	// export const hydrate = dev;
-	// export const router = browser;
-	// export const prerender = true;
 	import supabase from '$lib/db';
 
 	export const load = async () => {
 		let { data: blogs, error } = await supabase.from('blogs').select('*');
+		if (error) {
+			throw new Error(error.message);
+		}
+
 		return {
 			props: { blogs }
 		};

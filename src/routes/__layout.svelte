@@ -16,9 +16,13 @@
 	html {
 		/* font-family: 'Nanum Pen Script', cursive; */
 	}
+	pre code.hljs {
+		border-radius: 10px;
+	}
 
 	pre[data-language='typescript'] {
 		@apply text-2xl;
+		border-radius: 10px;
 	}
 	pre[data-language='css'] {
 		--hljs-background: linear-gradient(135deg, #2996cf, 80%, white);

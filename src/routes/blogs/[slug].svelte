@@ -12,6 +12,10 @@
 			.eq('title', title)
 			.single();
 
+		if (error) {
+			throw new Error(error.message);
+		}
+
 		updateSeoTag({
 			title,
 			description: blog.description,
