@@ -10,6 +10,9 @@ export default defineConfig({
         },
         fontFamily: {
             prompt: ["Prompt", "sans-serif"]
+        },
+        backgroundImage: {
+            'cover-image': 'url(https://npgblog.dev/static/5b3e1215fa148d9f5a3a01d4f1d51c3d/ee604/featureImage.png)'
         }
     },
     // attributify: true,
@@ -25,7 +28,8 @@ export default defineConfig({
         description: "mb-3 font-normal text-gray-700 dark:text-gray-400",
         published_date: "top-2 right-2 text-xs absolute bg-green-500 p-1 px-2 rounded text-white block",
         author: "bottom-4 right-4 text-xs absolute bg-green-500 p-1 px-2 rounded text-white block",
-        createPost: "absolute bottom-2 right-2 rounded bg-blue-600 p-2 text-white cursor-pointer px-3"
+        createPost: "absolute bottom-2 right-2 rounded bg-blue-600 p-2 text-white cursor-pointer px-3",
+        bgCover: "object-fill bg-cover bg-center"
     },
     shortcuts: {
         active: "bg-blue-600 rounded-lg text-white font-bold font-prompt uppercase"
