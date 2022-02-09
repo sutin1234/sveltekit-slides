@@ -31,7 +31,7 @@
 			</li>
 			 -->
 
-			<li class:active={$page.url.pathname === '/blogs'}>
+			<li class:active={$page.url.pathname.indexOf('blogs') !== -1}>
 				<a sveltekit:prefetch href="/blogs">Blog</a>
 			</li>
 			<li class:active={$page.url.pathname === '/about'}>

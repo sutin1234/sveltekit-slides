@@ -4,7 +4,7 @@
 	import { lazyLoad } from '$lib/core/lazyLoad';
 	export let { title, description, cover_image, published, author } = $$props;
 
-	$: slug = '/blogs/' + title.replace(/ /g, '-');
+	$: slug = '/blogs/detail/' + title.replace(/ /g, '-');
 	$: published_date = dateThai(published);
 </script>
 

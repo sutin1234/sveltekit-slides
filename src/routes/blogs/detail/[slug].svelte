@@ -39,24 +39,27 @@
 	$: published_date = dateThai(blog.published);
 </script>
 
-<!-- <svelte:head><title>{'Blog: ' + slug_title}</title></svelte:head> -->
-<div class="bg-white m-4 lg:p-12 pt-5 flex align-center flex-col">
-	<img
-		use:lazyLoad={blog.cover_image}
-		alt={blog.title}
-		loading="lazy"
-		class="rounded-lg border shadow-md object-cover"
-	/>
-	<h1 class="text-3xl py-2 pt-5">{$seo.title}</h1>
-	<div>
-		<small class="text-gray-400">
-			<Calendar />
-			{published_date}
-		</small>
-		<small class="text-gray-400">
-			<Edit />
-			{blog.author}
-		</small>
+<div class="bg-white lg:p-12 w-full">
+	<div class="p-4">
+		<img
+			use:lazyLoad={blog.cover_image}
+			alt={blog.title}
+			loading="lazy"
+			class="rounded-lg mx-auto object-fill"
+		/>
 	</div>
-	<p class="py-4">{blog.description}</p>
+	<div class="content p-4">
+		<h1 class="text-3xl py-2 pt-5 text-left">{$seo.title}</h1>
+		<div class="text-left">
+			<small class="text-gray-400">
+				<Calendar />
+				{published_date}
+			</small>
+			<small class="text-gray-400">
+				<Edit />
+				{blog.author}
+			</small>
+		</div>
+		<p class="py-4">{blog.description}</p>
+	</div>
 </div>
