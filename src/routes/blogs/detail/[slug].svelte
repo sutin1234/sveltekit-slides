@@ -39,18 +39,18 @@
 	$: published_date = dateThai(blog.published);
 </script>
 
-<div class="bg-white lg:p-12 w-full">
-	<div class="p-4">
+<div class="bg-white lg:p-12 max-w-xl m-0 mx-auto">
+	<div class="">
 		<img
 			use:lazyLoad={blog.cover_image}
 			alt={blog.title}
 			loading="lazy"
-			class="rounded-lg mx-auto object-fill"
+			class="mx-auto object-fill rounded-lg"
 		/>
 	</div>
-	<div class="content p-4">
-		<h1 class="text-3xl py-2 pt-5 text-left">{$seo.title}</h1>
-		<div class="text-left">
+	<div class="content lg:px-20 px-2">
+		<h1 class="text-3xl py-2 pt-5 text-left font-bold">{$seo.title}</h1>
+		<div class="">
 			<small class="text-gray-400">
 				<Calendar />
 				{published_date}

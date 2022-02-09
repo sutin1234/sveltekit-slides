@@ -15,6 +15,7 @@
 	body,
 	html {
 		/* font-family: 'Nanum Pen Script', cursive; */
+		font-family: Prompt, sans-serif;
 	}
 	pre code.hljs {
 		border-radius: 10px;

@@ -28,8 +28,8 @@
 	];
 </script>
 
-<div class="min-h-screen flex justify-center items-center">
-	<div class="shadow-lg rounded-2xl w-80 bg-white dark:bg-gray-800">
+<div class="flex justify-center items-center">
+	<div class="shadow-lg rounded-2xl w-80 bg-white dark:bg-gray-800 mt-8">
 		<img alt="profil" src={cover_image} class="rounded-t-lg h-28 w-full mb-4" />
 		<div class="flex flex-col items-center justify-center p-4 -mt-16">
 			<!-- svelte-ignore a11y-missing-attribute -->

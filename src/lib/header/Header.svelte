@@ -7,7 +7,7 @@
 
 <Seo />
 
-<header class="flex h-18 justify-center items-center">
+<header class="flex h-18 justify-center items-center my-5">
 	<div class="corner px-2 mx-2">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" class="mx-2" />
@@ -58,7 +58,7 @@
 		/* width: 3em; */
 		height: 3em;
 		font-weight: 500;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 	}
 
 	.corner a {
