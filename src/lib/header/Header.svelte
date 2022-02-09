@@ -7,19 +7,19 @@
 
 <Seo />
 
-<header class="flex h-18 justify-center items-center my-5">
+<header class="flex h-18 justify-center items-center mb-5 bg-blue-500">
 	<div class="corner px-2 mx-2">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" class="mx-2" />
-			<span class="text-xl font-bold">Thinny.dev</span>
+			<span class="text-xl font-bold text-white hover:uppercase">Thinny.dev</span>
 			<!-- <span class="@sm:hidden @lg:hidden @xl:hidden 2xl:hidden">slides</span> -->
 		</a>
 	</div>
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
+		<!-- <svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
+		</svg> -->
 
 		<ul>
 			<li class:active={$page.url.pathname === '/'}>
@@ -38,9 +38,9 @@
 				<a sveltekit:prefetch href="/about">About</a>
 			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
+		<!-- <svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+		</svg> -->
 	</nav>
 
 	<div class="corner">
@@ -78,7 +78,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		/* --background: rgba(255, 255, 255, 0.7); */
 	}
 
 	svg {
@@ -129,10 +129,11 @@
 		color: var(--heading-color);
 		font-weight: 700;
 		font-size: 0.8rem;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
+		color: white;
 	}
 
 	a:hover {

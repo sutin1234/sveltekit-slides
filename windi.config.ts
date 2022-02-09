@@ -28,6 +28,6 @@ export default defineConfig({
         createPost: "absolute bottom-2 right-2 rounded bg-blue-600 p-2 text-white cursor-pointer px-3"
     },
     shortcuts: {
-        active: "bg-blue-400 rounded-lg text-white font-bold font-prompt"
+        active: "bg-blue-600 rounded-lg text-white font-bold font-prompt uppercase"
     }
 });

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
+	import Footer from '$lib/footer/Footer.svelte';
 	import { browser } from '$app/env';
 	import 'virtual:windi.css';
 	if (browser) import('virtual:windi-devtools');
@@ -7,9 +8,10 @@
 
 <Header />
 
-<main class="rounded-lg">
+<main class="rounded-lg mb-8">
 	<slot />
 </main>
+<Footer />
 
 <style global lang="postcss">
 	body,
