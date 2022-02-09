@@ -20,18 +20,19 @@
 	};
 
 	let code = '// src/App.svelte\n';
-	code += 'const website = "thinny.dev" \n';
-	code += 'console.log(`${website} Power By SvelteKit`);\n\n';
+	code += 'const website = "www.thinny.dev" \n';
+	code += 'const year = "new Date().getFullYear()" \n';
+	code += 'console.log(`${website} Power By SvelteKit @ ${year}`);\n\n';
 	code += '// Play on Svelte REPL\n';
 	code += 'https://svelte.dev/repl\n\n';
 	code += '// Output\n';
-	code += 'thinny.dev Power By Sveltekit\n';
+	code += 'www.thinny.dev Power By Sveltekit @2022 \n';
 </script>
 
 <svelte:head>
 	<!-- {@html github} -->
 </svelte:head>
 
-<div class="min-h-screen flex justify-center items-center">
+<div class="flex justify-center items-center">
 	<Highlight {code} language={typescript} />
 </div>
