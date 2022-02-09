@@ -11,8 +11,8 @@
 <main class="rounded-lg mb-8">
 	<slot />
 </main>
-<Footer />
 
+<!-- <Footer /> -->
 <style global lang="postcss">
 	body,
 	html {
