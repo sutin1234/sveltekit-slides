@@ -1,14 +1,6 @@
+import type { SEO } from "$lib/core/interfaces/seo";
 import { writable } from "svelte/store";
-interface SEO {
-    favicon?: string;
-    title: string;
-    description?: string;
-    type?: string;
-    url?: string;
-    image?: string;
-    site_name?: string;
-    keywords?: string;
-}
+
 const initialize: SEO = {
     favicon: '/favicon.png',
     title: "Thinny.dev | เว็บไซต์เพื่อการเรียนรู้การเขียนโปรแกรม",

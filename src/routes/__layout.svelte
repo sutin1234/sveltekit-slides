@@ -2,8 +2,14 @@
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 	import { browser } from '$app/env';
+	import { navigating } from '$app/stores';
+	import { loadingState } from '$lib/store/loading';
+	import Loading from '$lib/Components/Loading.svelte';
+
+	// WindiCSS
 	import 'virtual:windi.css';
 	if (browser) import('virtual:windi-devtools');
+	$: $loadingState = !!$navigating;
 </script>
 
 <Header />
@@ -11,6 +17,8 @@
 <main class="rounded-lg mb-8">
 	<slot />
 </main>
+
+<Loading />
 
 <!-- <Footer /> -->
 <style global lang="postcss">

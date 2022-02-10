@@ -1,6 +1,5 @@
 <script context="module">
 	import { seo, updateSeoTag } from '$lib/store/seo';
-	import { fade } from 'svelte/transition';
 	import supabase from '$lib/db';
 
 	export const load = async ({ url, params }) => {
@@ -41,11 +40,7 @@
 </script>
 
 <div class="bg-white lg:p-12 max-w-xl m-0 mx-auto">
-	<div
-		class="*bgCover h-96 bg-gray-200"
-		style="background-image: url({blog.cover_image});"
-		transition:fade
-	>
+	<div class="*bgCover h-96 bg-gray-200" style="background-image: url({blog.cover_image});">
 		<!-- <img
 			use:lazyLoad={blog.cover_image}
 			alt={blog.title}

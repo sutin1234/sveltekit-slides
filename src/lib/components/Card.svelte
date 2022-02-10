@@ -2,7 +2,6 @@
 	import { dateThai } from '$lib/utils';
 	import { Calendar, Edit, ArrowRight } from '$lib/components/icons/index';
 	import { lazyLoad } from '$lib/core/lazyLoad';
-	import { fade } from 'svelte/transition';
 	export let { title, description, cover_image, published, author } = $$props;
 
 	$: slug = '/blogs/detail/' + title.replace(/ /g, '-');
