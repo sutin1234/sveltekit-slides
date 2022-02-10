@@ -3,13 +3,20 @@
 	import Footer from '$lib/footer/Footer.svelte';
 	import { browser } from '$app/env';
 	import { navigating } from '$app/stores';
-	import { loadingState } from '$lib/store/loading';
-	import Loading from '$lib/Components/Loading.svelte';
+	import { loadingState, updateState } from '$lib/store/loading';
+	import Loading from '$lib/components/Loading.svelte';
+	import { beforeNavigate } from '$app/navigation';
+	import { fade } from 'svelte/transition';
 
 	// WindiCSS
 	import 'virtual:windi.css';
 	if (browser) import('virtual:windi-devtools');
-	$: $loadingState = !!$navigating;
+	// $: $loadingState = !!$navigating;
+	beforeNavigate((e) => {
+		console.log('onNavigate', e);
+		updateState(true);
+		setTimeout(() => updateState(false), 600);
+	});
 </script>
 
 <Header />

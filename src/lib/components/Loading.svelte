@@ -3,8 +3,8 @@
 </script>
 
 {#if $loadingState}
-	<div class="backdrop bg-gray-200 p-4 w-screen top-0 absolute flex items-center justify-center">
-		<div class="text-white text-center">
+	<div class="backdrop bg-black/40 p-4 w-screen top-0 absolute flex items-center justify-center">
+		<div class="text-white text-center  bg-gray-500 p-4 rounded-lg">
 			{$loading.text}
 		</div>
 	</div>

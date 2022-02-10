@@ -5,4 +5,5 @@ export const initialize: LOADING = {
 
 }
 export const loadingState = writable(false)
+export const updateState = (state: boolean): void => loadingState.set(state)
 export const loading = writable(initialize)
