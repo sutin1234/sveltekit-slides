@@ -3,8 +3,7 @@ import mdsvexConfig from './mdsvex.config.js';
 import preprocess from 'svelte-preprocess';
 import WindiCSS from 'vite-plugin-windicss';
 import vercelAdapter from '@sveltejs/adapter-vercel';
-import path from 'path'
-
+import path from 'path';
 
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
@@ -15,13 +14,13 @@ const config = {
 		vite: {
 			plugins: [WindiCSS()],
 			optimizeDeps: {
-				include: ["highlight.js/lib/core", "prism-svelte"],
+				include: ['highlight.js/lib/core', 'prism-svelte']
 			},
 			resolve: {
 				alias: {
 					$utils: path.resolve('./src/utils'),
 					$lib: path.resolve('./src/lib'),
-					$assets: path.resolve('./src/assets'),
+					$assets: path.resolve('./src/assets')
 				}
 			}
 		}

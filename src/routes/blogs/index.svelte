@@ -30,4 +30,4 @@
 		<Card {title} {description} {cover_image} {published} {author} />
 	{/each}
 </div>
-<!-- <a class="*createPost" href="/blogs/create"> เขียนโพสต์ </a> -->
+<a class="*createPost" href="/blogs/create"> เขียนโพสต์ </a>

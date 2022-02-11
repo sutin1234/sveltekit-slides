@@ -1,5 +1,5 @@
 export interface LOADING {
-    iconURL?: string;
-    iconOnly?: boolean;
-    text: string;
+	iconURL?: string;
+	iconOnly?: boolean;
+	text: string;
 }

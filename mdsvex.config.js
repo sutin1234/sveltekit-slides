@@ -1,5 +1,4 @@
-
-import containers from "remark-containers";
+import containers from 'remark-containers';
 // import github from "remark-github";
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function highlighter(code) {
@@ -18,7 +17,7 @@ const config = {
 	remarkPlugins: [containers],
 	rehypePlugins: [],
 	highlight: {
-		alias: { javascript: "javascript" },
+		alias: { javascript: 'javascript' },
 		highlighter
 	}
 };
