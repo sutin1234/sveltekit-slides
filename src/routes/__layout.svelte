@@ -11,12 +11,9 @@
 	// WindiCSS
 	import 'virtual:windi.css';
 	if (browser) import('virtual:windi-devtools');
+
 	// $: $loadingState = !!$navigating;
-	beforeNavigate((e) => {
-		console.log('onNavigate', e);
-		updateState(true);
-		setTimeout(() => updateState(false), 600);
-	});
+	beforeNavigate((e) => setTimeout(() => updateState(false), 500));
 </script>
 
 <Header />
