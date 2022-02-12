@@ -1,10 +1,10 @@
 <script>
 	import { slide, fly } from 'svelte/transition';
-	let scriptText = `
-        <div x-data={ open: false }>
-            ...
-        </div>
-    `;
+	// let scriptText = `
+	//     <div x-data={ open: false }>
+	//         ...
+	//     </div>
+	// `;
 	let alpine_list = [
 		{
 			title: 'x-data',

@@ -36,3 +36,9 @@
 <div class="flex justify-center items-center">
 	<Highlight {code} language={typescript} />
 </div>
+
+<style global>
+	pre code.hljs {
+		padding: 1em !important;
+	}
+</style>

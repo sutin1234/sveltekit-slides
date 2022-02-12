@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	// import Footer from '$lib/footer/Footer.svelte';
-	import { browser } from '$app/env';
+	// import { browser } from '$app/env';
 	import { updateState } from '$lib/store/loading';
 	import Loading from '$lib/components/Loading.svelte';
 	import { beforeNavigate } from '$app/navigation';
@@ -31,15 +31,24 @@
 	}
 	pre code.hljs {
 		border-radius: 10px;
+		/* padding: 0 !important; */
 	}
 
 	pre[data-language='typescript'] {
-		@apply text-2xl;
+		@apply text-base;
 		border-radius: 10px;
+		width: 100%;
+		padding: 10px;
 	}
 	pre[data-language='css'] {
 		--hljs-background: linear-gradient(135deg, #2996cf, 80%, white);
 		--hljs-foreground: #fff;
 		--hljs-radius: 8px;
+	}
+	@media only screen and (min-width: 1024px) {
+		pre[data-language='typescript'] {
+			width: 85%;
+			@apply text-2xl;
+		}
 	}
 </style>

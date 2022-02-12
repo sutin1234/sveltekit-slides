@@ -2,7 +2,7 @@
 	import { seo, updateSeoTag } from '$lib/store/seo';
 	import supabase from '$lib/db';
 
-	export const load = async ({ url, params }) => {
+	export const load = async ({ params }) => {
 		const { slug } = params;
 		const title = slug.replace(/-/g, ' ');
 
@@ -35,20 +35,29 @@
 	import { Calendar, Edit } from '$lib/components/icons/index';
 	import { dateThai } from '$lib/utils';
 	import { lazyLoad } from '$lib/core/lazyLoad';
+	import Highlight from 'svelte-highlight';
+	import typescript from 'svelte-highlight/src/languages/typescript';
+	import github from 'svelte-highlight/src/styles/github';
+	import 'svelte-highlight/src/styles/atom-one-dark.css';
+
 	export let blog;
 	$: published_date = dateThai(blog.published);
 </script>
 
-<div class="bg-white lg:p-12 max-w-xl m-0 mx-auto">
-	<div class="*bgCover h-96 bg-gray-200" style="background-image: url({blog.cover_image});">
-		<!-- <img
+<svelte:head>
+	{@html github}
+</svelte:head>
+
+<div class="bg-white p-12">
+	<div class="bg-gray-100 object-cover">
+		<img
 			use:lazyLoad={blog.cover_image}
 			alt={blog.title}
 			loading="lazy"
-			class="mx-auto object-fill rounded-lg"
-		/> -->
+			class="mx-auto object-cover bg-cover"
+		/>
 	</div>
-	<div class="content lg:px-20 px-2">
+	<div class="content px-2">
 		<h1 class="text-3xl py-2 pt-5 text-left font-bold">{$seo.title}</h1>
 		<div class="">
 			<small class="text-gray-400">
@@ -60,6 +69,17 @@
 				{blog.author}
 			</small>
 		</div>
-		<p class="py-4">{blog.description}</p>
+		<div class="py-4">
+			<div>{@html blog.description}</div>
+			{#if blog.detail}
+				<Highlight code={blog.detail} language={typescript} />
+			{/if}
+		</div>
 	</div>
 </div>
+
+<style global>
+	pre code.hljs {
+		padding: 0 !important;
+	}
+</style>

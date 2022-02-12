@@ -25,9 +25,17 @@
 	export let blogs;
 </script>
 
-<div class="flex flex-wrap justify-center items-center">
+<!-- <div class="flex justify-end">
+	<a
+		class="rounded bg-blue-600 p-2 text-white cursor-pointer px-3 ss:max-w-xs text-center m-4 md:w-max"
+		href="/blogs/create"
+	>
+		เขียนโพสต์
+	</a>
+</div> -->
+
+<div class="flex flex-wrap justify-center">
 	{#each blogs as { title, description, cover_image, published, author }}
 		<Card {title} {description} {cover_image} {published} {author} />
 	{/each}
 </div>
-<a class="*createPost" href="/blogs/create"> เขียนโพสต์ </a>

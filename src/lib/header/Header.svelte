@@ -11,7 +11,7 @@
 	<div class="corner px-2 mx-2">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" class="mx-2" />
-			<span class="text-xl font-bold text-white hover:uppercase">Thinny.dev</span>
+			<span class="text-xl font-bold text-white">Thinny.dev</span>
 			<!-- <span class="@sm:hidden @lg:hidden @xl:hidden 2xl:hidden">slides</span> -->
 		</a>
 	</div>
@@ -81,15 +81,15 @@
 		/* --background: rgba(255, 255, 255, 0.7); */
 	}
 
-	svg {
+	/* svg {
 		width: 2em;
 		height: 3em;
 		display: block;
-	}
+	} */
 
-	path {
+	/* path {
 		fill: var(--background);
-	}
+	} */
 
 	ul {
 		position: relative;

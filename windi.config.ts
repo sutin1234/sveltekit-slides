@@ -3,7 +3,13 @@ import { defineConfig } from 'windicss/helpers';
 export default defineConfig({
 	theme: {
 		screens: {
-			small: '320px'
+			ss: '320px',
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1280px',
+			'2xl': '1440px',
+			'3xl': '1530px'
 		},
 		height: {
 			'h-100': '30rem'
@@ -30,8 +36,12 @@ export default defineConfig({
 		description: 'mb-3 font-normal text-gray-700 dark:text-gray-400',
 		published_date: 'top-2 right-2 text-xs absolute bg-green-500 p-1 px-2 rounded text-white block',
 		author: 'bottom-4 right-4 text-xs absolute bg-green-500 p-1 px-2 rounded text-white block',
-		createPost: 'absolute bottom-2 right-2 rounded bg-blue-600 p-2 text-white cursor-pointer px-3',
-		bgCover: 'object-fill bg-cover bg-center'
+		createPost: 'rounded bg-blue-600 p-2 text-white cursor-pointer px-3',
+		bgCover: 'object-cover bg-center',
+		input: 'border border-gray-300 rounded-lg block w-full p-2.5',
+		label: 'block mb-2 text-sm font-medium',
+		primaryBtn:
+			'bg-blue-600 rounded-lg text-white font-bold font-prompt w-full p-2 hover:bg-blue-800'
 	},
 	shortcuts: {
 		active: 'bg-blue-600 rounded-lg text-white font-bold font-prompt uppercase'

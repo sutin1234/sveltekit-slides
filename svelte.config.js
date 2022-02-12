@@ -4,6 +4,7 @@ import preprocess from 'svelte-preprocess';
 import WindiCSS from 'vite-plugin-windicss';
 import vercelAdapter from '@sveltejs/adapter-vercel';
 import path from 'path';
+import { imagetools } from 'vite-imagetools';
 
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
@@ -12,7 +13,7 @@ const config = {
 	kit: {
 		adapter: vercelAdapter(),
 		vite: {
-			plugins: [WindiCSS()],
+			plugins: [WindiCSS(), imagetools({ force: true })],
 			optimizeDeps: {
 				include: ['highlight.js/lib/core', 'prism-svelte']
 			},
