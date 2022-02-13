@@ -72,6 +72,5 @@ Layers. Onions have layers. Ogres have layers. Onions have layers. You get it? W
 Oh, you both have layers. Oh. You know, not everybody like onions.
 
 ```js
-const year = '2001';
-const movie = 'Shrek';
-```
+const year = "2001";
+const movie = "Shrek";
