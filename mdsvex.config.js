@@ -7,7 +7,7 @@ function highlighter(code) {
 }
 
 const config = {
-	layout: './src/lib/blog/layouts.svelte',
+	// layout: './src/lib/blog/layouts.svelte',
 	extensions: ['.svelte.md', '.md', '.svx'],
 	// frontmatter: {
 	// 	marker: "-"
@@ -22,8 +22,8 @@ const config = {
 	rehypePlugins: [],
 	highlight: {
 		// alias: { javascript: 'js', typescript: 'ts' },
-		alias: { yavascript: 'javascript' }
-		// highlighter
+		alias: { yavascript: 'javascript' },
+		highlighter
 	}
 };
 
