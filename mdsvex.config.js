@@ -1,9 +1,18 @@
 import containers from 'remark-containers';
 import github from 'remark-github';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+import hljs from 'highlight.js';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-function highlighter(code) {
-	return `<pre><code>${code}</code></pre>`;
+function highlighter(str, lang) {
+	// return `<pre data-language="${lang}"><code>${str}</code></pre>`;
+	if (lang && hljs.getLanguage(lang)) {
+		try {
+			return hljs.highlight(lang, str).value;
+			// eslint-disable-next-line no-empty
+		} catch (__) {}
+	}
+	return '';
 }
 
 const config = {
@@ -22,7 +31,7 @@ const config = {
 	rehypePlugins: [],
 	highlight: {
 		// alias: { javascript: 'js', typescript: 'ts' },
-		alias: { yavascript: 'javascript' },
+		alias: { javascript: 'js' },
 		highlighter
 	}
 };
