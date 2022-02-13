@@ -38,7 +38,7 @@
 		@apply text-base;
 		border-radius: 10px;
 		width: 100%;
-		padding: 10px;
+		/* padding: 10px; */
 	}
 	pre[data-language='css'] {
 		--hljs-background: linear-gradient(135deg, #2996cf, 80%, white);
