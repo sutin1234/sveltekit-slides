@@ -37,7 +37,7 @@
 	import { lazyLoad } from '$lib/core/lazyLoad';
 	import Highlight from 'svelte-highlight';
 	import typescript from 'svelte-highlight/src/languages/typescript';
-	import github from 'svelte-highlight/src/styles/github';
+	// import github from 'svelte-highlight/src/styles/github';
 	import 'svelte-highlight/src/styles/atom-one-dark.css';
 
 	export let blog;
@@ -45,7 +45,7 @@
 </script>
 
 <svelte:head>
-	{@html github}
+	<!-- {@html github} -->
 </svelte:head>
 
 <div class="bg-white p-12">
@@ -77,9 +77,3 @@
 		</div>
 	</div>
 </div>
-
-<style global>
-	pre code.hljs {
-		padding: 0 !important;
-	}
-</style>
