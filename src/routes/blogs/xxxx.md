@@ -7,8 +7,18 @@ tags:
   - 'Markdown'
 ---
 
-## {title}
+
+### {title}
 
 ### {description}
 
-Why SvelteKit is absolutely amazing?
+This is text in `markdown` **notation**
+
+# The MDSv example
+
+You can use *components* and a *logic* inside doc:
+
+```js
+const test = "myTest"
+
+```
