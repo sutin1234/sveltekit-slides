@@ -3,7 +3,7 @@
 	// export const hydrate = dev;
 	// export const router = browser;
 	// export const prerender = true;
-	import profile from '$assets/images/me.jpeg';
+	import profile from '$assets/files/demo.pdf';
 
 	export const load = async ({ fetch }) => {
 		const data = await fetch(profile);
