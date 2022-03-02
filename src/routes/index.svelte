@@ -31,7 +31,10 @@
 	code += 'www.thinny.dev Power By Sveltekit @2022 \n';
 
 	const downloadPdf = (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test.pdf') => {
-		console.log('userAgent: ', navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/));
+		const userAgent = navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/);
+		console.log('userAgent ', userAgent);
+		console.log('includes safari', userAgent.includes('safari'));
+
 		if (!window.ActiveXObject) {
 			console.log('not ActiveXObject');
 			var save = document.createElement('a');
@@ -39,11 +42,12 @@
 			save.target = '_blank';
 			// var filename = fileURL.substring(fileURL.lastIndexOf('/') + 1);
 			save.download = fileName;
-			if (navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search('Chrome') < 0) {
+			if (userAgent.includes('safari')) {
 				document.location = save.href;
-				console.log(save);
+				console.log('safari ok', save);
 				// window event not working here
 			} else {
+				console.log('not safari', save);
 				(window.URL || window.webkitURL).revokeObjectURL(save.href);
 			}
 		} else if (!!window.ActiveXObject && document.execCommand) {
