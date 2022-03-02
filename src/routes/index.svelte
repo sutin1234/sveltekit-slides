@@ -19,7 +19,6 @@
 		url: 'www.thinny.dev/',
 		image: 'https://npgblog.dev/static/5b3e1215fa148d9f5a3a01d4f1d51c3d/ee604/featureImage.png'
 	};
-
 	let code = '// src/App.svelte\n';
 	code += 'const website = "www.thinny.dev" \n';
 	code += 'const year = "new Date().getFullYear()" \n';
@@ -37,3 +36,5 @@
 <div class="flex justify-center items-center">
 	<HighlightAuto {code} />
 </div>
+
+<a href="http://projanco.com/Library/AngularJS%20in%20Action.pdf">download pdf</a>
