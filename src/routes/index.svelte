@@ -1,11 +1,24 @@
-<!-- <script context="module">
-	import { browser, dev } from '$app/env';
-	export const hydrate = dev;
-	export const router = browser;
-	export const prerender = true;
-</script> -->
+<script context="module">
+	// import { browser, dev } from '$app/env';
+	// export const hydrate = dev;
+	// export const router = browser;
+	// export const prerender = true;
+	import profile from '$assets/images/me.jpeg';
+
+	export const load = async ({ fetch }) => {
+		const data = await fetch(profile);
+		return {
+			props: {
+				blobData: (data && (await data.blob())) || null
+			}
+		};
+	};
+</script>
+
 <script>
 	// @ts-nocheck
+
+	export let blobData;
 
 	import { seo } from '$lib/store/seo';
 	// import Highlight from 'svelte-highlight';
@@ -13,6 +26,7 @@
 	// import typescript from 'svelte-highlight/src/languages/typescript';
 	// import github from 'svelte-highlight/src/styles/github';
 	import 'svelte-highlight/src/styles/atom-one-dark.css';
+	import { onMount } from 'svelte';
 
 	// update SEO
 	$seo = {
@@ -29,6 +43,10 @@
 	code += 'https://svelte.dev/repl\n\n';
 	code += '// Output\n';
 	code += 'www.thinny.dev Power By Sveltekit @2022 \n';
+
+	onMount(async () => {
+		console.log(blobData);
+	});
 
 	const downloadPdf = (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test.pdf') => {
 		const userAgent = navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/);
@@ -57,32 +75,31 @@
 			_window.close();
 		}
 	};
-	const downloadPdfWithBlob = async (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test_blob.pdf') => {
-		console.log(evt, fileURL, fileName);
-		const data = await fetch(fileURL);
-		if (data) {
-			const $blob = await data.blob();
-			// const fd = new FileReader();
-			// fd.onload = () => {
-			// 	console.log(fd.result);
-			// };
-			// fd.readAsDataURL($blob);
-			if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-				window.navigator.msSaveOrOpenBlob($blob, fileName);
-			} else {
-				const link = window.URL.createObjectURL($blob);
-				var _window = window.open(link, '_blank');
-				_window.document.close();
-				_window.document.execCommand('SaveAs', true, fileName);
-				_window.close();
+	const downloadPdfWithBlob = async (evt, fileURL = '/api/images/me.jpeg', fileName = 'test_blob.pdf') => {
+		console.log('downloadPdfWithBlob');
+		const blobURL = URL.createObjectURL(blobData);
+		window.open(blobURL);
+	};
+	const b64toBlob = (content, contentType) => {
+		contentType = contentType || '';
+		const sliceSize = 512;
+		// method which converts base64 to binary
+		const byteCharacters = window.atob(content);
 
-				// var link = document.createElement('a');
-				// link.href = window.URL.createObjectURL($blob);
-				// link.download = fileName;
-				// link.click();
-				// window.location.href = link.href;
+		const byteArrays = [];
+		for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+			const slice = byteCharacters.slice(offset, offset + sliceSize);
+			const byteNumbers = new Array(slice.length);
+			for (let i = 0; i < slice.length; i++) {
+				byteNumbers[i] = slice.charCodeAt(i);
 			}
+			const byteArray = new Uint8Array(byteNumbers);
+			byteArrays.push(byteArray);
 		}
+		const blob = new Blob(byteArrays, {
+			type: contentType
+		}); // statement which creates the blob
+		return blob;
 	};
 
 	const dwPDF = (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test_blob.pdf') => {
