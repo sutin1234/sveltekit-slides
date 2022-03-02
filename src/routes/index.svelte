@@ -30,7 +30,7 @@
 	code += '// Output\n';
 	code += 'www.thinny.dev Power By Sveltekit @2022 \n';
 
-	const downloadPdf = (fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test.pdf') => {
+	const downloadPdf = (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test.pdf') => {
 		console.log('userAgent: ', navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/));
 		if (!window.ActiveXObject) {
 			console.log('not ActiveXObject');
@@ -53,7 +53,8 @@
 			_window.close();
 		}
 	};
-	const downloadPdfWithBlob = async (fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test_blob.pdf') => {
+	const downloadPdfWithBlob = async (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test_blob.pdf') => {
+		console.log(evt, fileURL, fileName);
 		const data = await fetch(fileURL);
 		if (data) {
 			const $blob = await data.blob();
@@ -79,6 +80,11 @@
 			}
 		}
 	};
+
+	const dwPDF = (evt, fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test_blob.pdf') => {
+		console.log(evt, fileURL, fileName);
+		window.open(fileURL);
+	};
 </script>
 
 <svelte:head>
@@ -90,7 +96,9 @@
 </div>
 <div class="text-center p-4">
 	<button class="*primaryBtn" on:click={downloadPdf} target="_system">download pdf</button>
-	<a class="*primaryBtn" href="http://projanco.com/Library/AngularJS%20in%20Action.pdf" target="_blank">download pdf 2</a>
+</div>
+<div>
+	<button class="*primaryBtn" on:click|stopPropagation={dwPDF}>download pdf 3</button>
 </div>
 <div>
 	<a class="*primaryBtn" href="https://demo.vl.fyi/PHP/DownloadFile/PHP_DOWNLOAD_FILE_FROM_SERVER.ZIP"> Download File zip </a>
