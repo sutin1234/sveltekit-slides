@@ -78,7 +78,7 @@
 	const downloadPdfWithBlob = async (evt, fileURL = '/api/images/me.jpeg', fileName = 'test_blob.pdf') => {
 		console.log('downloadPdfWithBlob');
 		const blobURL = URL.createObjectURL(blobData);
-		window.open(blobURL);
+		document.location(blobURL);
 	};
 	const b64toBlob = (content, contentType) => {
 		contentType = contentType || '';
