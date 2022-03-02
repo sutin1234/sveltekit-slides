@@ -72,3 +72,6 @@
 	<button class="*primaryBtn" on:click={downloadPdf} target="_system">download pdf</button>
 	<a class="*primaryBtn" href="http://projanco.com/Library/AngularJS%20in%20Action.pdf" target="_blank">download pdf 2</a>
 </div>
+<div>
+	<a class="*primaryBtn" href="https://demo.vl.fyi/PHP/DownloadFile/PHP_DOWNLOAD_FILE_FROM_SERVER.ZIP"> Download File zip </a>
+</div>
