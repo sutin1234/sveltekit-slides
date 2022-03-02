@@ -59,6 +59,21 @@
 			_window.close();
 		}
 	};
+	const downloadPdfWithBlob = async (fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test_blob.pdf') => {
+		const data = await fetch(fileURL);
+		if (data) {
+			const $blob = await data.blob();
+			console.log('blob ', $blob);
+			if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+				window.navigator.msSaveOrOpenBlob($blob, fileName);
+			} else {
+				var link = document.createElement('a');
+				link.href = window.URL.createObjectURL($blob);
+				link.download = fileName;
+				link.click();
+			}
+		}
+	};
 </script>
 
 <svelte:head>
@@ -74,4 +89,7 @@
 </div>
 <div>
 	<a class="*primaryBtn" href="https://demo.vl.fyi/PHP/DownloadFile/PHP_DOWNLOAD_FILE_FROM_SERVER.ZIP"> Download File zip </a>
+</div>
+<div>
+	<button class="*primaryBtn" on:click={downloadPdfWithBlob}>downloadPdfWithBlob</button>
 </div>
