@@ -27,6 +27,7 @@
 	// import github from 'svelte-highlight/src/styles/github';
 	import 'svelte-highlight/src/styles/atom-one-dark.css';
 	import { onMount } from 'svelte';
+	import { saveAs } from 'file-saver';
 
 	// update SEO
 	$seo = {
@@ -89,10 +90,11 @@
 			save.download = fileName;
 			if (userAgent.includes('safari')) {
 				var file = new File([blobData], 'test.pdf', { type: 'application/pdf' });
-				var a = document.createElement('a');
-				a.download = 'test.pdf';
-				a.href = window.URL.createObjectURL(file);
-				a.click();
+				// var a = document.createElement('a');
+				// a.download = 'test.pdf';
+				// a.href = window.URL.createObjectURL(file);
+				// a.click();
+				saveAs(file, 'test.pdf');
 
 				// document.location = save.href;
 				console.log('safari ok', save);
