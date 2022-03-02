@@ -44,12 +44,6 @@
 				console.log(save);
 				// window event not working here
 			} else {
-				var evt = new MouseEvent('click', {
-					view: window,
-					bubbles: true,
-					cancelable: false
-				});
-				save.dispatchEvent(evt);
 				(window.URL || window.webkitURL).revokeObjectURL(save.href);
 			}
 		} else if (!!window.ActiveXObject && document.execCommand) {
@@ -63,14 +57,25 @@
 		const data = await fetch(fileURL);
 		if (data) {
 			const $blob = await data.blob();
-			console.log('blob ', $blob);
+			// const fd = new FileReader();
+			// fd.onload = () => {
+			// 	console.log(fd.result);
+			// };
+			// fd.readAsDataURL($blob);
 			if (window.navigator && window.navigator.msSaveOrOpenBlob) {
 				window.navigator.msSaveOrOpenBlob($blob, fileName);
 			} else {
-				var link = document.createElement('a');
-				link.href = window.URL.createObjectURL($blob);
-				link.download = fileName;
-				link.click();
+				const link = window.URL.createObjectURL($blob);
+				var _window = window.open(link, '_blank');
+				_window.document.close();
+				_window.document.execCommand('SaveAs', true, fileName);
+				_window.close();
+
+				// var link = document.createElement('a');
+				// link.href = window.URL.createObjectURL($blob);
+				// link.download = fileName;
+				// link.click();
+				// window.location.href = link.href;
 			}
 		}
 	};
