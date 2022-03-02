@@ -6,9 +6,9 @@
 </script> -->
 <script>
 	import { seo } from '$lib/store/seo';
-	import Highlight from 'svelte-highlight';
+	// import Highlight from 'svelte-highlight';
 	import { HighlightAuto } from 'svelte-highlight';
-	import typescript from 'svelte-highlight/src/languages/typescript';
+	// import typescript from 'svelte-highlight/src/languages/typescript';
 	// import github from 'svelte-highlight/src/styles/github';
 	import 'svelte-highlight/src/styles/atom-one-dark.css';
 
@@ -37,4 +37,4 @@
 	<HighlightAuto {code} />
 </div>
 
-<a href="http://projanco.com/Library/AngularJS%20in%20Action.pdf">download pdf</a>
+<a href="http://projanco.com/Library/AngularJS%20in%20Action.pdf" target="_system">download pdf</a>
