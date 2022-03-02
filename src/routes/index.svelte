@@ -31,14 +31,17 @@
 	code += 'www.thinny.dev Power By Sveltekit @2022 \n';
 
 	const downloadPdf = (fileURL = 'http://projanco.com/Library/AngularJS%20in%20Action.pdf', fileName = 'test.pdf') => {
+		console.log('userAgent: ', navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/));
 		if (!window.ActiveXObject) {
+			console.log('not ActiveXObject');
 			var save = document.createElement('a');
 			save.href = fileURL;
 			save.target = '_blank';
 			// var filename = fileURL.substring(fileURL.lastIndexOf('/') + 1);
 			save.download = fileName;
 			if (navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search('Chrome') < 0) {
-				document.location = save.href;
+				// document.location = save.href;
+				console.log(save);
 				// window event not working here
 			} else {
 				var evt = new MouseEvent('click', {
@@ -67,4 +70,5 @@
 </div>
 <div class="text-center p-4">
 	<button class="*primaryBtn" on:click={downloadPdf} target="_system">download pdf</button>
+	<a class="*primaryBtn" href="http://projanco.com/Library/AngularJS%20in%20Action.pdf" target="_blank">download pdf 2</a>
 </div>
