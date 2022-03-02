@@ -40,7 +40,7 @@
 			// var filename = fileURL.substring(fileURL.lastIndexOf('/') + 1);
 			save.download = fileName;
 			if (navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search('Chrome') < 0) {
-				// document.location = save.href;
+				document.location = save.href;
 				console.log(save);
 				// window event not working here
 			} else {
