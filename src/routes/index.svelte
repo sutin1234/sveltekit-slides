@@ -76,9 +76,27 @@
 		}
 	};
 	const downloadPdfWithBlob = async (evt, fileURL = '/api/images/me.jpeg', fileName = 'test_blob.pdf') => {
-		console.log('downloadPdfWithBlob');
-		const blobURL = URL.createObjectURL(blobData);
-		document.location(blobURL);
+		const userAgent = navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/);
+		console.log('userAgent ', userAgent);
+		console.log('includes safari', userAgent.includes('safari'));
+
+		console.log('blobData', blobData);
+
+		if (!window.ActiveXObject) {
+			var save = document.createElement('a');
+			save.href = URL.createObjectURL(blobData);
+			save.target = '_blank';
+			save.download = fileName;
+			if (userAgent.includes('safari')) {
+				document.location = save.href;
+				console.log('safari ok', save);
+			} else {
+				console.log('not safari', save);
+				(window.URL || window.webkitURL).revokeObjectURL(save.href);
+			}
+		}
+
+		console.log('navigate success');
 	};
 	const b64toBlob = (content, contentType) => {
 		contentType = contentType || '';
