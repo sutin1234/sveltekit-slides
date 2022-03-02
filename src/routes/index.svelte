@@ -88,7 +88,13 @@
 			save.target = '_blank';
 			save.download = fileName;
 			if (userAgent.includes('safari')) {
-				document.location = save.href;
+				var file = new File([blobData], 'test.pdf', { type: 'application/pdf' });
+				var a = document.createElement('a');
+				a.download = 'test.pdf';
+				a.href = window.URL.createObjectURL(file);
+				a.click();
+
+				// document.location = save.href;
 				console.log('safari ok', save);
 			} else {
 				console.log('not safari', save);
