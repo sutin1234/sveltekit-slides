@@ -6,7 +6,6 @@
 		if (error) {
 			throw new Error(error.message);
 		}
-
 		return {
 			props: { blogs }
 		};
@@ -34,7 +33,7 @@
 	</a>
 </div> -->
 
-<div class="flex flex-wrap justify-center">
+<div class="grid lg:grid-cols-3 md:grid-cols-2">
 	{#each blogs as { title, description, cover_image, published, author }}
 		<Card {title} {description} {cover_image} {published} {author} />
 	{/each}

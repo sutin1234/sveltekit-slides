@@ -28,6 +28,7 @@
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.4.0",
+		"file-saver": "^2.0.5",
 		"highlight.js": "^11.4.0",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.3.3",
@@ -60,5 +61,16 @@
 		"@lukeed/uuid": "^2.0.0",
 		"cl-editor": "^2.3.0",
 		"cookie": "^0.4.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,svelte}": [
+			"svelte-check",
+			"npm run lint:fix"
+		]
 	}
 }

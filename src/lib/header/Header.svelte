@@ -7,7 +7,7 @@
 
 <Seo />
 
-<header class="flex h-18 justify-center items-center mb-5 bg-blue-500">
+<header class="flex h-18 justify-center items-center bg-blue-500">
 	<div class="corner px-2 mx-2">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" class="mx-2" />

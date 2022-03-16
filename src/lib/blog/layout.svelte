@@ -1,10 +1,10 @@
 <script>
 	// import 'highlight.js';
 	// import 'highlight.js/styles/atom-one-dark.css';
-	import Prism from 'prismjs';
+	// import Prism from 'prismjs';
 
 	$: code = `const data = "testig data";`;
-	$: html = Prism.highlight(code, Prism.languages.javascript, 'javascript');
+	// $: html = Prism.highlight(code, Prism.languages.javascript, 'javascript');s
 	const codeChange = ({ target }) => (code = target.value);
 </script>
 
@@ -20,15 +20,9 @@
 
 <section class="p-4">
 	<pre class="bg-gray-100 p-2 rounded-lg">
-		{@html html}
+		<!-- {@html html} -->
 	</pre>
 
-	<textarea
-		class="border border-gray-200 p-2"
-		cols="30"
-		rows="10"
-		bind:value={code}
-		on:change={codeChange}
-	/>
+	<textarea class="border border-gray-200 p-2" cols="30" rows="10" bind:value={code} on:change={codeChange} />
 	<slot />
 </section>

@@ -3,6 +3,8 @@
 	import { goto } from '$app/navigation';
 	import { updateState } from '$lib/store/loading';
 	import supabase from '$lib/db';
+	import TextEditor from '$lib/components/TextEditor.svelte';
+
 	$seo = {
 		...$seo,
 		title: 'Thinny.dev | เขียน blog บทความ ใหม่',
@@ -38,9 +40,7 @@
 	};
 	const uploadImage = async (imageFile: File) => {
 		updateState(true);
-		const { data, error } = await supabase.storage
-			.from('cover-image')
-			.upload(`${imageFile.name}`, imageFile);
+		const { data, error } = await supabase.storage.from('cover-image').upload(`${imageFile.name}`, imageFile);
 		if (data) {
 			updateState(false);
 			downloadImage(data.Key);
@@ -63,7 +63,8 @@
 
 	const titleChange = ({ target }) => (blog.title = target.value);
 	const descriptionChange = ({ target }) => (blog.description = target.value);
-	const detailChange = ({ target }) => (blog.detail = target.value);
+	// const detailChange = ({ target }) => (blog.detail = target.value);
+	const dataChange = ({ detail }) => (blog.detail = detail);
 </script>
 
 <div class="lg:p-12 max-w-xl m-0 mx-auto shadow rounded-lg">
@@ -80,41 +81,21 @@
 	</div>
 	<div class="p-2">
 		<label for="title" class="*label">Blog title</label>
-		<input
-			type="text"
-			id="title"
-			name="title"
-			class="*input"
-			placeholder="Enter Blog title"
-			value={blog.title}
-			on:change={titleChange}
-		/>
+		<input type="text" id="title" name="title" class="*input" value={blog.title} on:change={titleChange} />
 	</div>
 	<div class="p-2">
 		<label for="description" class="*label">Blog Description</label>
-		<textarea
-			class="*input"
-			name="description"
-			id="description"
-			placeholder="Enter Blog description"
-			cols="30"
-			rows="2"
-			value={blog.description}
-			on:change={descriptionChange}
-		/>
+		<textarea class="*input" cols="30" rows="2" value={blog.description} on:change={descriptionChange} />
 	</div>
+	<!-- <div class="p-2">
+		<label for="detail" class="*label">Blog Detail</label>
+		<textarea class="*input" cols="30" rows="5" value={blog.detail} on:change={detailChange} />
+	</div> -->
 	<div class="p-2">
 		<label for="detail" class="*label">Blog Detail</label>
-		<textarea
-			class="*input"
-			name="detail"
-			id="detail"
-			placeholder="Enter Blog Detail"
-			cols="30"
-			rows="10"
-			value={blog.detail}
-			on:change={detailChange}
-		/>
+		<div class="editor">
+			<TextEditor on:dataChange={dataChange} />
+		</div>
 	</div>
 	<div class="p-2">
 		<button class="*primaryBtn" on:click={postBlog}>Post</button>

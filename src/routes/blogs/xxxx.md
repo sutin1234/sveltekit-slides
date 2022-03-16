@@ -7,7 +7,6 @@ tags:
   - 'Markdown'
 ---
 
-
 ### {title}
 
 ### {description}
@@ -16,9 +15,8 @@ This is text in `markdown` **notation**
 
 # The MDSv example
 
-You can use *components* and a *logic* inside doc:
+You can use _components_ and a _logic_ inside doc:
 
 ```js
-const test = "myTest"
-
+const test = 'myTest';
 ```

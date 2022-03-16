@@ -8,9 +8,7 @@
 	$: published_date = dateThai(published);
 </script>
 
-<div
-	class="bg-white rounded-lg border border-gray-200 shadow-md m-4 h-1/3 relative md:w-1/2 lg:w-1/4 2xl:w-1/5"
->
+<div class="bg-white rounded-lg relative m-4">
 	<a href={slug} sveltekit:prefetch>
 		<!-- <img
 			use:lazyLoad={cover_image}
@@ -19,12 +17,9 @@
 			loading="lazy"
 			use:lazyLoad={cover_image}
 		/> -->
-		<div
-			class="*bgCover bg-gray-200 h-48 rounded-lg"
-			style="background-image: url({cover_image});"
-		/>
+		<div class="*bgCover bg-gray-200 h-32 rounded-lg" style="background-image: url({cover_image});" />
 	</a>
-	<div class="p-5">
+	<div class="p-4">
 		<a href={slug}>
 			<h5 class="*titleCard">{title}</h5>
 		</a>
@@ -37,9 +32,9 @@
 			<Calendar />
 			{published_date}
 		</div>
-		<span class="*author">
-			<Edit />
+		<!-- <span class="*author">
+			<Edit className="h-4 w-4 inline-block" />
 			{author}
-		</span>
+		</span> -->
 	</div>
 </div>

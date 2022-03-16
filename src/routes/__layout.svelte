@@ -5,6 +5,7 @@
 	import { updateState } from '$lib/store/loading';
 	import Loading from '$lib/components/Loading.svelte';
 	import { beforeNavigate } from '$app/navigation';
+	import SideBar from '$lib/sidebar/SideBar.svelte';
 
 	// WindiCSS
 	import 'virtual:windi.css';
@@ -16,8 +17,11 @@
 
 <Header />
 
-<main class="rounded-lg mb-8">
-	<slot />
+<main class="rounded-lg bg-gray-200">
+	<div class="min-h-screen flex flex-row justify-between">
+		<div class="w-1/4 bg-white"><SideBar /></div>
+		<div class="w-full"><slot /></div>
+	</div>
 </main>
 
 <Loading />

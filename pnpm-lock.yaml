@@ -1,6 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@editorjs/editorjs': ^2.23.2
+  '@editorjs/header': ^2.6.2
+  '@editorjs/image': ^2.6.2
+  '@editorjs/simple-image': ^1.4.1
   '@fontsource/fira-mono': ^4.5.1
   '@lukeed/uuid': ^2.0.0
   '@supabase/supabase-js': ^1.8.0
@@ -11,11 +15,13 @@ specifiers:
   '@types/cookie': ^0.4.1
   '@typescript-eslint/eslint-plugin': ^4.33.0
   '@typescript-eslint/parser': ^4.33.0
+  cl-editor: ^2.3.0
   cookie: ^0.4.1
   dayjs: ^1.10.7
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.4.0
+  file-saver: ^2.0.5
   highlight.js: ^11.4.0
   husky: ^7.0.4
   lint-staged: ^12.3.3
@@ -30,6 +36,7 @@ specifiers:
   remark-github: ^11.2.2
   svelte: ^3.46.3
   svelte-check: ^2.3.0
+  svelte-editorjs: ^0.1.0
   svelte-highlight: ^5.2.0
   svelte-preprocess: ^4.10.2
   svelte-prism: ^1.1.3
@@ -41,16 +48,21 @@ specifiers:
   windicss: ^3.4.3
 
 dependencies:
+  '@editorjs/header': 2.6.2
   '@fontsource/fira-mono': 4.5.1
   '@lukeed/uuid': 2.0.0
+  cl-editor: 2.3.0
   cookie: 0.4.1
 
 devDependencies:
+  '@editorjs/editorjs': 2.23.2
+  '@editorjs/image': 2.6.2
+  '@editorjs/simple-image': 1.4.1
   '@supabase/supabase-js': 1.30.0
   '@sveltejs/adapter-node': 1.0.0-next.67
   '@sveltejs/adapter-static': 1.0.0-next.26
-  '@sveltejs/adapter-vercel': 1.0.0-next.43
-  '@sveltejs/kit': 1.0.0-next.267_svelte@3.46.3
+  '@sveltejs/adapter-vercel': 1.0.0-next.45
+  '@sveltejs/kit': 1.0.0-next.288_svelte@3.46.3
   '@types/cookie': 0.4.1
   '@typescript-eslint/eslint-plugin': 4.33.0_959502c0ea240e86d4d2ba8b8c0fee45
   '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@4.5.5
@@ -58,6 +70,7 @@ devDependencies:
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.0_eslint@7.32.0+svelte@3.46.3
+  file-saver: 2.0.5
   highlight.js: 11.4.0
   husky: 7.0.4
   lint-staged: 12.3.3
@@ -72,6 +85,7 @@ devDependencies:
   remark-github: 11.2.2
   svelte: 3.46.3
   svelte-check: 2.3.0_svelte@3.46.3
+  svelte-editorjs: 0.1.0_68c485ce5abe1ae22b29e56c7f26ca3a
   svelte-highlight: 5.2.0
   svelte-preprocess: 4.10.2_svelte@3.46.3+typescript@4.5.5
   svelte-prism: 1.1.3
@@ -114,6 +128,26 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       chalk: 2.4.2
       js-tokens: 4.0.0
+    dev: true
+
+  /@editorjs/editorjs/2.23.2:
+    resolution: {integrity: sha512-SXWQjxE/ZO6zWvo83U+gfkM9LVJzYOtNkttyXkdfyYALVWiENyxtlej/Jmd1TZ4yWpKwQEICPXz0ceGkzKnJyQ==}
+    dependencies:
+      codex-notifier: 1.1.2
+      codex-tooltip: 1.0.4
+      nanoid: 3.2.0
+    dev: true
+
+  /@editorjs/header/2.6.2:
+    resolution: {integrity: sha512-U1dnT+KGjwFmpWneEEyR2Nqp42hn9iKwQDgRHWQM+y6qx82pg+eAyuIf0QWt2Mluu9uPD2CzNfvJ+pxIuwX8Lw==}
+    dev: false
+
+  /@editorjs/image/2.6.2:
+    resolution: {integrity: sha512-lai6LFJ8m3qRmSjio66o0CX7/75OupC3FQ5JWrV/biRT6GvUHtRNWKaMowKcC2ndXtfs4w6WwRxcXlB4WhUAdg==}
+    dev: true
+
+  /@editorjs/simple-image/1.4.1:
+    resolution: {integrity: sha512-8lqcMYKrxhnDNasqq4Id9/SwXymSofVb4SJBC7gQoJmNG9bfRgVEXLsEUnuLzn8ixkAYlK2oNTc7ioZdD8bEOw==}
     dev: true
 
   /@eslint/eslintrc/0.4.3:
@@ -251,14 +285,14 @@ packages:
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.43:
-    resolution: {integrity: sha512-Es0xSWJJVHRUH7z4yvWjst03ZHcK115S7WjamN3acbxmR4ESSGFjuxQzODMnbeWFFipk1hQYv56ffvXYr5XaJA==}
+  /@sveltejs/adapter-vercel/1.0.0-next.45:
+    resolution: {integrity: sha512-WoOMu4FSWjVeRiPq2NKfdZhobfOLmDykObZmm8JHptMDb0/I5SB+6wstzAeaNtQr2ZbQkUy0k7EX95riJifEEQ==}
     dependencies:
       esbuild: 0.14.21
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.267_svelte@3.46.3:
-    resolution: {integrity: sha512-zwtSuhgQV4qCXggmSU6hduFLuEE/7HMBNgRDHNjFPlXTn6VZT6whKPIfLGVRpHVveOyYzCxH6Dcy7nl0wfZ9kw==}
+  /@sveltejs/kit/1.0.0-next.288_svelte@3.46.3:
+    resolution: {integrity: sha512-6ky4CUFNGKoU1QV+fY2LOIB7atHdUCIMRx3pX21B2g9yZzQzkot0zHBrMMBSKF0/4Wx19PLEWrlGxlhakYmi8Q==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -697,6 +731,10 @@ packages:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
     dev: true
 
+  /cl-editor/2.3.0:
+    resolution: {integrity: sha512-TxTzuL3529Cmnxy4Q9djcKkZUZJLxuFvFomh6pfbAv72nTB4FCZUE7JhEF5PXeAWRstU+u6BD9ZTif9w0hGQfw==}
+    dev: false
+
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -733,6 +771,14 @@ packages:
   /code-point-at/1.1.0:
     resolution: {integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /codex-notifier/1.1.2:
+    resolution: {integrity: sha512-DCp6xe/LGueJ1N5sXEwcBc3r3PyVkEEDNWCVigfvywAkeXcZMk9K41a31tkEFBW0Ptlwji6/JlAb49E3Yrxbtg==}
+    dev: true
+
+  /codex-tooltip/1.0.4:
+    resolution: {integrity: sha512-Ud+N+y8PMIa9xGyKuo2j3q8QlfTzkMWQ5KeRrbCDerwVn7xq45nqPKQCFBXEMV0YI42/OqSMnsxP8MyVAyVhnA==}
     dev: true
 
   /color-convert/1.9.3:
@@ -1428,6 +1474,10 @@ packages:
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
       flat-cache: 3.0.4
+    dev: true
+
+  /file-saver/2.0.5:
+    resolution: {integrity: sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==}
     dev: true
 
   /fill-range/7.0.1:
@@ -2659,6 +2709,16 @@ packages:
       - sass
       - stylus
       - sugarss
+    dev: true
+
+  /svelte-editorjs/0.1.0_68c485ce5abe1ae22b29e56c7f26ca3a:
+    resolution: {integrity: sha512-aqMfmH8A3zaCWeNLf7/syRqhcNKSOultSVTUkNS2ny/T4hgNbXrKG1wLN0DvUzTcrXxsilt0doxtHJ9vXX8roQ==}
+    peerDependencies:
+      '@editorjs/editorjs': ^2.19.3
+      svelte: 3.31.0
+    dependencies:
+      '@editorjs/editorjs': 2.23.2
+      svelte: 3.46.3
     dev: true
 
   /svelte-highlight/5.2.0:
