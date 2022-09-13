@@ -12,19 +12,19 @@ const config = {
 
 	kit: {
 		adapter: vercelAdapter(),
-		vite: {
-			plugins: [WindiCSS(), imagetools({ force: true })],
-			optimizeDeps: {
-				include: ['highlight.js/lib/core', 'prism-svelte']
-			},
-			resolve: {
-				alias: {
-					$utils: path.resolve('./src/utils'),
-					$lib: path.resolve('./src/lib'),
-					$assets: path.resolve('./src/assets')
-				}
-			}
-		}
+		// vite: {
+		// 	plugins: [WindiCSS(), imagetools({ force: true })],
+		// 	optimizeDeps: {
+		// 		include: ['highlight.js/lib/core', 'prism-svelte']
+		// 	},
+		// 	resolve: {
+		// 		alias: {
+		// 			$utils: path.resolve('./src/utils'),
+		// 			$lib: path.resolve('./src/lib'),
+		// 			$assets: path.resolve('./src/assets')
+		// 		}
+		// 	}
+		// }
 	}
 };
 

@@ -1,19 +1,8 @@
-<script context="module">
+<script lang="ts">
 	import supabase from '$lib/db';
-
-	export const load = async () => {
-		let { data: blogs, error } = await supabase.from('blogs').select('*');
-		if (error) {
-			throw new Error(error.message);
-		}
-		return {
-			props: { blogs }
-		};
-	};
-</script>
-
-<script>
 	import { seo } from '$lib/store/seo';
+	import type { BLOGS } from '$lib/core/types/blogs';
+	import { onMount } from 'svelte';
 	import Card from '$lib/components/Card.svelte';
 	$seo = {
 		...$seo,
@@ -21,7 +10,12 @@
 		url: '/blogs',
 		image: 'https://npgblog.dev/static/5b3e1215fa148d9f5a3a01d4f1d51c3d/ee604/featureImage.png'
 	};
-	export let blogs;
+	$: blogs = [];
+
+	onMount(async () => {
+		let { data, error, status } = await supabase.from('blogs').select('*');
+		console.log(data, error, status);
+	});
 </script>
 
 <!-- <div class="flex justify-end">
@@ -34,7 +28,7 @@
 </div> -->
 
 <div class="grid lg:grid-cols-3 md:grid-cols-2">
-	{#each blogs as { title, description, cover_image, published, author }}
-		<Card {title} {description} {cover_image} {published} {author} />
+	{#each blogs as blog}
+		<!-- <Card {blog?.title} {description} {cover_image} {published} {author} /> -->
 	{/each}
 </div>

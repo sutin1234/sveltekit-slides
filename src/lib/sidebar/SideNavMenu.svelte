@@ -13,7 +13,7 @@
 			menus.update((m: IMENULIST[]) => (m = data));
 		}
 	});
-	const setActive = (index: number, id: string) => {
+	const setActive = (evt: any, index: number, id: string) => {
 		const foundMenu = $menus?.find((m) => m?.id == id);
 		if (foundMenu) {
 			foundMenu.actived = true;
@@ -28,13 +28,13 @@
 </script>
 
 <ul>
-	{#each menuLists as { label, actived, link, icon, id }, index}
+	{#each menuLists as menu, index}
 		<li class="hover:text-blue-800 py-2 rounded">
-			<a href={link} class="ss:p-0 ss:text-center p-2 cursor-pointer" class:actived class:text-blue-600={actived} on:click={setActive(index, id)}>
-				{#if icon}
-					<DynamicIcon name={icon} className="h-8 w-8" class="ss:w-10 ss:h-10 ss:inline-block" />
+			<a href={menu?.link} class="ss:p-0 ss:text-center p-2 cursor-pointer" class:activated={menu?.actived} class:text-blue-600={menu?.actived}>
+				{#if menu?.icon}
+					<DynamicIcon name={menu?.icon} className="h-8 w-8" class="ss:w-10 ss:h-10 ss:inline-block" />
 				{/if}
-				<span class="ss:hidden lg:inline-block">{label}</span>
+				<span class="ss:hidden lg:inline-block">{menu?.label}</span>
 			</a>
 		</li>
 	{/each}
