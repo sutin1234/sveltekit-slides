@@ -11,7 +11,7 @@
 	import { HighlightAuto } from 'svelte-highlight';
 	// import typescript from 'svelte-highlight/src/languages/typescript';
 	// import github from 'svelte-highlight/src/styles/github';
-	import 'svelte-highlight/src/styles/atom-one-dark.css';
+	// import 'svelte-highlight/src/styles/atom-one-dark.css';
 	import { onMount } from 'svelte';
 	import { saveAs } from 'file-saver';
 
