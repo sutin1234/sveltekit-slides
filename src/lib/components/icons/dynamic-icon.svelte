@@ -6,7 +6,7 @@
 	let component = null;
 	onMount(async () => {
 		if (name != undefined) {
-			component = (await import(`./${name}.svelte`)).default;
+			component = (await import(`./icon/${name}.svelte`)).default;
 			props = { ...$$props };
 		}
 	});
