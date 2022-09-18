@@ -8,6 +8,7 @@
 		if (name != undefined) {
 			component = (await import(`./icon/${name}.svelte`)).default;
 			props = { ...$$props };
+			console.log(`./icon/${name}.svelte`, { ...props });
 		}
 	});
 </script>
