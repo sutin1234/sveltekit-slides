@@ -9,7 +9,7 @@ const config = {
 	preprocess: [preprocess()],
 
 	kit: {
-		adapter: vercelAdapter(),
+		adapter: vercelAdapter()
 	}
 };
 

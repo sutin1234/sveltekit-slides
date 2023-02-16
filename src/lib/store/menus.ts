@@ -7,5 +7,5 @@ export const updateMenu = (menu: IMENULIST): void => {
 	menus.update((menus) => ({ ...menus, ...menu }));
 };
 export const updateMenuV2 = (menu: IMENULIST): void => {
-	menus.update((menus: IMENULIST[]) => ([...menus, menu]));
+	menus.update((menus: IMENULIST[]) => [...menus, menu]);
 };

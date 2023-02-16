@@ -34,11 +34,7 @@
 		<div class="flex flex-col items-center justify-center p-4 -mt-16">
 			<!-- svelte-ignore a11y-missing-attribute -->
 			<a class="block relative">
-				<img
-					alt="profil"
-					src={profile}
-					class="mx-auto object-cover rounded-full h-32 w-32  border-2 border-white dark:border-gray-800"
-				/>
+				<img alt="profil" src={profile} class="mx-auto object-cover rounded-full h-32 w-32  border-2 border-white dark:border-gray-800" />
 			</a>
 			<p class="text-gray-800 dark:text-white text-xl font-medium mt-2">{name}</p>
 			<p class="text-gray-400 text-xs mb-4">{job}</p>

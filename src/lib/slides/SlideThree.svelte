@@ -63,11 +63,7 @@
 
 <div class="flex flex-wrap text-center justify-center">
 	{#each alpine_list as list, index}
-		<div
-			in:slide={{ delay: 300 + index, duration: 300 + index }}
-			out:fly={{ duration: 300 }}
-			class="w-1/3 text-left mx-4 my-4 border p-4 rounded-lg shadow-lg h-30"
-		>
+		<div in:slide={{ delay: 300 + index, duration: 300 + index }} out:fly={{ duration: 300 }} class="w-1/3 text-left mx-4 my-4 border p-4 rounded-lg shadow-lg h-30">
 			<div class="text-2xl text-green-500 font-bold">{list.title}</div>
 			<p class="my-2">{list.description}</p>
 		</div>

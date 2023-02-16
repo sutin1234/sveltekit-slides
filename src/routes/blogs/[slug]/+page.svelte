@@ -16,7 +16,7 @@
 
 	function back() {
 		// goto($page.url.pathname.substring(0, $page.url.pathname.lastIndexOf('/')));
-		goto(previousPage)
+		goto(previousPage);
 	}
 </script>
 

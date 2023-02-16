@@ -18,8 +18,7 @@ export default defineConfig({
 			prompt: ['Prompt', 'sans-serif']
 		},
 		backgroundImage: {
-			'cover-image':
-				'url(https://npgblog.dev/static/5b3e1215fa148d9f5a3a01d4f1d51c3d/ee604/featureImage.png)'
+			'cover-image': 'url(https://npgblog.dev/static/5b3e1215fa148d9f5a3a01d4f1d51c3d/ee604/featureImage.png)'
 		}
 	},
 	// attributify: true,
@@ -40,8 +39,7 @@ export default defineConfig({
 		bgCover: 'object-cover bg-center',
 		input: 'border border-gray-300 rounded-lg block w-full p-2.5',
 		label: 'block mb-2 text-sm font-medium',
-		primaryBtn:
-			'bg-blue-600 rounded-lg text-white font-bold font-prompt w-full p-2 hover:bg-blue-800'
+		primaryBtn: 'bg-blue-600 rounded-lg text-white font-bold font-prompt w-full p-2 hover:bg-blue-800'
 	},
 	shortcuts: {
 		active: 'bg-blue-600 rounded-lg text-white font-bold font-prompt uppercase'
